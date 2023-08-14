@@ -49,6 +49,14 @@ const handleEnterKeyPress = (event) => {
         addItem();
     }
 };
-
+//creo fución para cambiar de modo claro a  modo oscuro
+const changeMode = () =>{
+    if($("#body").getAttribute("data-theme") === "light"){
+        $("#body").setAttribute("data-theme", "dark")
+    }else{
+        $("#body").setAttribute("data-theme", "light")
+    }
+}
 $("#addButton").addEventListener("click", addItem);
 $("#newItemInput").addEventListener("keydown", handleEnterKeyPress);
+$("#modeBtn").addEventListener("click",changeMode)
