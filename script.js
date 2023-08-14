@@ -10,15 +10,18 @@ const addItem = () => {
 };
 
 const createList = (list) => {
+    $("#list").innerHTML = ""
     list.forEach((item) => {
         let liContent = document.createTextNode(`${item}`);
         let liItem = document.createElement('li');
         let deleteBtn = document.createElement('button');
         deleteBtn.classList.add("btn");
+        deleteBtn.addEventListener("click", ()=>deleteItem(item))
         deleteBtn.innerText = "Delete"; 
         let updateBtn = document.createElement("button");
         updateBtn.classList.add("btn");
         updateBtn.innerText = "Edit";
+        updateBtn.addEventListener("click",()=>updateItem(item))
         liItem.classList.add("list-item");
         liItem.appendChild(liContent);
         liItem.appendChild(deleteBtn);
@@ -26,6 +29,26 @@ const createList = (list) => {
         $("#list").appendChild(liItem);
     });
 };
-
+//hago la función de eliminar item
+const deleteItem = (item) =>{
+    const itemIndex = shoppingList.indexOf(item)
+    shoppingList.splice(itemIndex,1)
+    createList(shoppingList)
+    //puedo usar el filter tmb
+}
+//hago la función de editar item
+const updateItem = (item)=>{
+    let newValue = prompt("Cambio").toLocaleUpperCase()
+    let itemIndex = shoppingList.indexOf(item)
+    shoppingList[itemIndex] = newValue
+    createList(shoppingList)
+}
+//hago función para permitir que al tocar enter agregue el item
+const handleEnterKeyPress = (event) => {
+    if (event.key === "Enter") {
+        addItem();
+    }
+};
 
 $("#addButton").addEventListener("click", addItem);
+$("#newItemInput").addEventListener("keydown", handleEnterKeyPress);
