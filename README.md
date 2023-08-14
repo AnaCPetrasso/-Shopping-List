@@ -1,4 +1,3 @@
-# Shooping list
 # Shopping List Web App
 
 Esta es una sencilla aplicación web de lista de compras desarrollada con HTML, CSS y JavaScript. Permite a los usuarios agregar, editar y eliminar elementos de la lista de compras, así como cambiar entre temas claro y oscuro.
