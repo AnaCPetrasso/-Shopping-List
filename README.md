@@ -9,9 +9,6 @@ Esta es una sencilla aplicación web de lista de compras desarrollada con HTML, 
 - Eliminar elementos de la lista.
 - Cambiar entre temas claro y oscuro.
 
-## Capturas de Pantalla
-
-(Puedes agregar aquí capturas de pantalla de la aplicación en funcionamiento si lo deseas)
 
 ## Cómo Usar
 
